@@ -1,0 +1,13 @@
+name: "Build libtheora Action"
+author: "daemoohn"
+inputs:
+  BINTRAY_API_USER:
+    required: true
+  BINTRAY_API_KEY:
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.BINTRAY_API_USER }}
+    - ${{ inputs.BINTRAY_API_KEY }}

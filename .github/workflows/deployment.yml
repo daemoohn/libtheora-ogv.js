@@ -1,0 +1,13 @@
+on: deployment
+name: Build libtheora
+jobs:
+  buildAndUploadArtifact:
+    name: buildAndUploadArtifact
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@master
+    - name: libtheoraBuildActions
+      with: 
+        BINTRAY_API_USER: ${{ secrets.BINTRAY_API_USER }}
+        BINTRAY_API_KEY: ${{ secrets.BINTRAY_API_KEY }}
+      uses: ./
